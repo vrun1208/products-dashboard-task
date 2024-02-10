@@ -1,0 +1,25 @@
+.card-component {
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 16px;
+    background-color: #fff;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+  }
+
+ @media only screen and (max-width: 500px){
+    .card-component {
+        width: 100px;
+    }
+
+    .card {
+        flex-direction: column;
+    }
+ }
