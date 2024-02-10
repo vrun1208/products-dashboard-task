@@ -17,7 +17,7 @@ const DashBoard = ({ update, onDelete }) => {
 
     return(
         <div className='product-crud-container'>
-        <TableContainer component={Paper}> 
+        <TableContainer component={Paper} style={{ overflowY: 'auto'}}> 
             {loading ? (
                 <CircularProgress />
             ) : (
