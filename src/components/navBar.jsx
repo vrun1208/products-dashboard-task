@@ -40,15 +40,15 @@ const Navbar = () => {
     <>
     <AppBar position="static">
       <Toolbar>
-        <Typography variant="h4" component="div" sx={{ flexGrow: 1, textAlign: 'left', fontWeight: 'bolder'}}>
+        <Typography variant="h5" component="div" sx={{ flexGrow: 1, textAlign: 'left', fontWeight: 'bolder'}}>
           Product Dashboard
         </Typography>
         {user && (
           <div>
-            <Typography variant="body3" sx={{ margin: 1 }}>
+            <Typography variant="body1" sx={{ margin: 1 }}>
               {user.displayName}
             </Typography>
-            <Typography variant="body3" sx={{ margin: 1 }}>
+            <Typography variant="body1" sx={{ margin: 1 }}>
               {user.email}
             </Typography>
             <Button variant='contained' onClick={handleLogout} sx={{ margin: 1 }}>

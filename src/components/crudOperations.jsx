@@ -18,7 +18,7 @@ const ProductCrud = () => {
 
   useEffect(() => {
     fetchData();
-  }, [filter]);
+  }, []);
 
   useEffect(() => {
     setTotalProducts(products.length);
@@ -28,7 +28,7 @@ const ProductCrud = () => {
   const fetchData = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`https://fakestoreapi.com/products?sort=${filter}`);
+      const response = await axios.get(`https://fakestoreapi.com/products`);
       setProducts(response.data);
       //console.log(products);
       setTotalProducts(products.length);
@@ -42,6 +42,15 @@ const ProductCrud = () => {
   //handling Asc/desc function
   const handleToggleOrder = (e) => {
     setFilter(e.target.value);
+    const sorted = [...products].sort((a, b) => {
+        if(filter === "desc"){
+            return a.id - b.id ;
+        }
+        else{
+            return b.id - a.id;
+        }
+    });
+    setProducts(sorted);
   };
 
   //handles Add Product dialog Bob

@@ -1,9 +1,10 @@
 import React from 'react';
-import { Button, Paper, Container, Typography } from '@mui/material';
+import { Paper, Container, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import { auth } from '../config/firebase';
 import { useAuth } from '../context/authContext';
+import {  GoogleButton } from 'react-google-button';
 //import DashBoard from './dashboard';
 import Navbar from './navBar';
 
@@ -24,16 +25,15 @@ const Login = () => {
   return (
       <Container component="main" maxWidth="sm">
           <Paper elevation={4} sx={{ height: '200px' , display: 'flex', flexDirection: 'column', alignItems: 'center', padding: 4, marginTop: 10 }}>
-              <Typography component="h1" variant="h5">
-                  Product dashboard (assignment)
-              </Typography>
               {user ? (
                     <Navbar />
               ) : (
                   <>
-                      <Button variant="contained" color="primary" onClick={handleGoogleLogin} sx={{ marginTop: 6 }}>
-                          Login with Google
-                      </Button>
+                      <Typography component="h1" variant="h5" sx={{ marginBottom: 6 }}>
+                        Product dashboard (assignment)
+                      </Typography>
+                      <GoogleButton onClick={handleGoogleLogin} />
+                          
                   </>
               )}
           </Paper>
